@@ -9,14 +9,14 @@ class ImageController extends Controller
 {
     public function upload(ImageRequest $request){
 
-        if($request->hasFile('image')){
+        // if($request->hasFile('image')){
 
-            $imageName = $request->image->getClientOriginalName();
-            $request->image->storeAs('public', $imageName);
+        //     $imageName = $request->image->getClientOriginalName();
+        //     $request->image->storeAs('public', $imageName);
 
-        }
+        // }
 
-        $request->user()->avatar = $imageName;
+        $request->user()->avatar = $request->image;
         $request->user()->save();
 
         return back();

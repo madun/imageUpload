@@ -23,7 +23,7 @@
                                 @endforeach
                             @endif
                             
-                            <upload-form></upload-form>
+                            <upload-form :user="{{ Auth::user()}}"></upload-form>
                         </div>
                     </div>
 
